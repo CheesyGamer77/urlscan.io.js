@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "EXAMPLE",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/CheesyGamer77/typescript-base",
   "author": "CheesyGamer77 <43181046+CheesyGamer77@users.noreply.github.com>",
   "license": "MIT",

@@ -1,20 +1,20 @@
-export type SearchResponse = {
-    results: SearchResult[],
+export type APISearchResponse = {
+    results: APISearchResult[],
     total: number,
     took: number,
     has_more: boolean
 }
 
-export type SearchResult = {
-    task: SearchTask,
-    stats: SearchStats,
-    page: SearchPage,
+export type APISearchResult = {
+    task: APISearchTask,
+    stats: APISearchStats,
+    page: APISearchPage,
     result: string,
     screenshot: string
 }
 
-export type SearchTask = {
-    visibility: string, // TODO: Convert to enum
+export type APISearchTask = {
+    visibility: "public" | "private" | "unlisted",
     method: string, // TODO: Convert to enum
     domain: string,
     apexDomain: string,
@@ -23,7 +23,7 @@ export type SearchTask = {
     url: string
 }
 
-export type SearchStats = {
+export type APISearchStats = {
     uniqIPs: number,
     uniqCountries: number,
     dataLength: number,
@@ -31,7 +31,7 @@ export type SearchStats = {
     requests: number
 }
 
-export type SearchPage = {
+export type APISearchPage = {
     country: string,
     server: string,
     redirected?: string,

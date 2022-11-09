@@ -1,7 +1,7 @@
 import { VERSION, API_URL } from '..';
 import { ClientOptions, SearchOptions } from './types';
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import { SearchResponse } from '../entities/search/types';
+import { APISearchResponse } from '../entities/search/types';
 
 function wasSuccessful(response: AxiosResponse<any, any>) {
     return response.status < 400;
@@ -38,7 +38,8 @@ export class Client {
         }
 
         // TODO: Caching
+        // TODO: Rate limiting
 
-        return response.data as SearchResponse;
+        return response.data as APISearchResponse;
     }
 }

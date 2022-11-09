@@ -1,21 +1,26 @@
-# typescript-base
+# urlscan.io.js
 
-A typescript repository pre-configured for code style linting and commit linting.
+An API wrapper for [urlscan.io](https://urlscan.io) written in TypeScript
 
-## Usage
-
-Clone the repo into your project folder
+## Installation
 
 ```sh-session
-git clone https://github.com/CheesyGamer77/typescript-base .
+npm install urlscan.io.js
+yarn add urlscan.io.js
+pnpm add urlscan.io.js
 ```
 
-Edit the contents of `package.json` (namely `name`, `description`, `repository`, and `author`)
+## Getting Started
 
-Setup husky git hooks
+Searching for results by domain
 
-```sh-session
-npx husky install
+```ts
+import { Client } from 'urlscan.io.js';
+
+// create your client
+const client = new Client({ apikey: "YOUR API KEY GOES HERE" });
+
+// search for scan results for "mydomain.com"
+const domain = "mydomain.com";
+const results = await client.search({ q: `domain:${domain}`});
 ```
-
-Get coding!
